@@ -42,10 +42,13 @@ while True:
     keyvar -= 1
 
     # loads the characters on the screen
-    mario = Player(screen, 3, 50)
-    mario.setLocation(300, 0)
-    mario.do()
-    mario.blitme()
+    mario = Player(screen)
+    # mario.blitme()
+    mario.update()
     # updates the screen
     pygame.display.flip()
 
+    for event in pygame.event.get():
+        if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+            pygame.quit()
+            sys.exit()
