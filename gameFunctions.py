@@ -1,19 +1,11 @@
-#importing the libraries for the player class
-import pygame
-from pygame.sprite import Sprite
+#importing the libraries for the game functions
+import pygame, sys
 from pygame.locals import *
 
+# a check events function that's sole purpose is to determine if the user clicks on the x out of the window button
+# amd if that happens, exits out of the window
 def check_events():
     for event in pygame.event.get():
         if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
             pygame.quit()
             sys.exit()
-    
-def check_keydown_events():
-    if event.key == pygame.K_w:
-        self.jumping = True
-
-# def check_keyup_events():
-#     if 
-
-
